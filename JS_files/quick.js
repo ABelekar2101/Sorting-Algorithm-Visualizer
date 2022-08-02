@@ -1,23 +1,23 @@
-async function partitionLomuto(ele, l, r) {
-  console.log("In partitionLomuto()");
+async function partition(ele, l, r) {
+  console.log("In partition()");
   let i = l - 1;
   // color pivot element
   ele[r].style.background = "red";
   for (let j = l; j <= r - 1; j++) {
-    console.log("In partitionLomuto for j");
+    console.log("In partition for j");
     // color current element
     ele[j].style.background = "yellow";
-    // pauseChamp
+    // pause
     await waitforme(delay);
 
     if (parseInt(ele[j].style.height) < parseInt(ele[r].style.height)) {
-      console.log("In partitionLomuto for j if");
+      console.log("In partition for j if");
       i++;
       swap(ele[i], ele[j]);
       // color
       ele[i].style.background = "orange";
       if (i != j) ele[j].style.background = "orange";
-      // pauseChamp
+      // pause
       await waitforme(delay);
     } else {
       // color if not less than pivot
@@ -25,7 +25,7 @@ async function partitionLomuto(ele, l, r) {
     }
   }
   i++;
-  // pauseChamp
+  // pause
   await waitforme(delay);
   swap(ele[i], ele[r]); // pivot height one
   console.log(`i = ${i}`, typeof i);
@@ -33,7 +33,7 @@ async function partitionLomuto(ele, l, r) {
   ele[r].style.background = "pink";
   ele[i].style.background = "green";
 
-  // pauseChamp
+  // pause
   await waitforme(delay);
 
   // color
@@ -47,7 +47,7 @@ async function partitionLomuto(ele, l, r) {
 async function quickSort(ele, l, r) {
   console.log("In quickSort()", `l=${l} r=${r}`, typeof l, typeof r);
   if (l < r) {
-    let pivot_index = await partitionLomuto(ele, l, r);
+    let pivot_index = await partition(ele, l, r);
     await quickSort(ele, l, pivot_index - 1);
     await quickSort(ele, pivot_index + 1, r);
   } else {

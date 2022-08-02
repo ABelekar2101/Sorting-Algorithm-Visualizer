@@ -91,7 +91,7 @@ async function merge(ele, low, mid, high) {
 async function mergeSort(ele, l, r) {
   console.log("In mergeSort()");
   if (l >= r) {
-    console.log(`return cause just 1 elemment l=${l}, r=${r}`);
+    console.log(`return, just 1 elemment l=${l}, r=${r}`);
     return;
   }
   const m = l + Math.floor((r - l) / 2);

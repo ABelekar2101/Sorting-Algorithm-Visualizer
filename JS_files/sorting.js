@@ -1,4 +1,4 @@
-// swap function util for sorting algorithms takes input of 2 DOM elements with .style.height feature
+// swap function for sorting algorithms; takes input of 2 DOM elements with style, height feature
 function swap(el1, el2) {
   console.log("In swap()");
 
@@ -7,7 +7,7 @@ function swap(el1, el2) {
   el2.style.height = temp;
 }
 
-// Disables sorting buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
+// Disable sorting buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
 function disableSortingBtn() {
   document.querySelector(".bubbleSort").disabled = true;
   document.querySelector(".insertionSort").disabled = true;
@@ -25,22 +25,22 @@ function enableSortingBtn() {
   document.querySelector(".selectionSort").disabled = false;
 }
 
-// Disables size slider used in conjunction with enable, so that we can disable during sorting and enable buttons after it
+// Disable size slider used in conjunction with enable, so that we can disable during sorting and enable buttons after it
 function disableSizeSlider() {
   document.querySelector("#arr_sz").disabled = true;
 }
 
-// Enables size slider used in conjunction with disable
+// Enable size slider used in conjunction with disable
 function enableSizeSlider() {
   document.querySelector("#arr_sz").disabled = false;
 }
 
-// Disables newArray buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
+// Disable newArray buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
 function disableNewArrayBtn() {
   document.querySelector(".newArray").disabled = true;
 }
 
-// Enables newArray buttons used in conjunction with disable
+// Enable newArray buttons used in conjunction with disable
 function enableNewArrayBtn() {
   document.querySelector(".newArray").disabled = false;
 }
@@ -59,7 +59,6 @@ let arraySize = document.querySelector("#arr_sz");
 
 // Event listener to update the bars on the UI
 arraySize.addEventListener("input", function () {
-  console.log(arraySize.value, typeof arraySize.value);
   createNewArray(parseInt(arraySize.value));
 });
 
@@ -71,7 +70,6 @@ let delayElement = document.querySelector("#speed_input");
 
 // Event listener to update delay time
 delayElement.addEventListener("input", function () {
-  console.log(delayElement.value, typeof delayElement.value);
   delay = 320 - parseInt(delayElement.value);
 });
 
